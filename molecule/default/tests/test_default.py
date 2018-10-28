@@ -14,3 +14,7 @@ def test_nginx_is_installed(host):
 def test_nginx_is_running(host):
     nginx = host.service('nginx')
     assert nginx.is_running
+
+
+def test_nginx_says_hello(host):
+    host.run_expect([0], 'curl localhost/hello | grep conf')

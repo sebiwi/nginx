@@ -1,0 +1,9 @@
+# molecule/default/prepare.yml
+---
+
+- hosts: all
+  tasks:
+    - name: install curl
+      apt:
+        name: curl
+        state: present

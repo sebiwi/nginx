@@ -10,3 +10,13 @@
   service:
     name: nginx
     state: started
+
+- name: add default host configuration
+  copy:
+    src: default
+    dest: /etc/nginx/sites-enabled/default
+
+- name: reload nginx
+  service:
+    name: nginx
+    state: reloaded
