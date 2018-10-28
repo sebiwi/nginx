@@ -1,2 +1,7 @@
 # tasks/main.yml
 ---
+
+- name: install nginx
+  apt:
+    name: nginx
+    state: present
